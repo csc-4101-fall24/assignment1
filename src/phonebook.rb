@@ -1,20 +1,65 @@
 class PhoneBook
     def initialize
+    @phonebookHash = {}
     end
 
     def add(name, number, is_listed)
-        raise Exception, "Not implemented"
+       
+        if @phonebookHash.key?(name)
+        return false
+       
+        elsif number.length != 12
+        return false
+       
+        else
+        if @phonebookHash.any? {|nameCheck, numEntry| numEntry[:number] == number && numEntry[:listed]}
+        return false
+        
+        else
+        @phonebookHash[name] = {number: number, listed: is_listed }
+        return true
+        end
+    end
     end
 
     def lookup(name)
-        raise Exception, "Not implemented"
+        
+        if @phonebookHash.has_key?(name)
+            if @phonebookHash[name][:listed] == false
+        return nil
+        
+        else
+        return @phonebookHash[name][:number]
+        end
+        
+        else 
+        return nil
+        end 
+   
     end
 
     def lookupByNum(number)
-        raise Exception, "Not implemented"
-    end
-
+       
+    @phonebookHash.each do |name, value |
+            if value[:number] == number && value[:listed]
+            return name
+            end
+        end
+     return nil
+     end
+    
     def namesByAc(areacode)
-        raise Exception, "Not implemented"
+        acmatchednames = []
+    @phonebookHash.each do |name, value |
+        if value[:number][0, 3] == areacode
+        acmatchednames << name
+        
+        end
+        end
+        
+        
+    return acmatchednames
     end
+    
+    
 end

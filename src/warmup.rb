@@ -1,23 +1,69 @@
 def fib(n)
-    raise Exception, "Not Implemented"
+   
+return [] if n == 0
+   return [0] if n == 1
+   return [0,1] if n == 2
+ 
+   fibonacci = fib(n - 1)
+   fibonacci << fibonacci[-2] + fibonacci[-1]
+   return fibonacci
+
 end
 
 def isPalindrome(n)
-    raise Exception, "Not Implemented"
+   
+palindrome = n.to_s
+    if palindrome == palindrome.reverse
+    return true
+    else 
+    return false
+    
+    end 
 end
 
 def nthmax(n, a)
-    raise Exception, "Not Implemented"
+    
+if n > a.size
+    return nil
+    else
+reversedA = a.sort.reverse
+reversedA[n]
+end
+
 end
 
 def freq(s)
-    raise Exception, "Not Implemented"
+    
+if s.length == 0
+    return ""
+    end 
+    
+    charCount = Hash.new(0)
+    s.each_char do |char|
+    charCount[char] = charCount[char] + 1
+    end
+    
+    charCount.max_by{|char, count| count} [0]
+
 end
 
 def zipHash(arr1, arr2)
-    raise Exception, "Not Implemented"
+    
+if arr1.length != arr2.length
+    return nil
+    end 
+    
+    Hash[arr1.zip(arr2)]
+
 end
 
 def hashToArray(hash)
-    raise Exception, "Not Implemented"
+    
+array = []
+    hash.each do |pair|
+    array << pair
+    end
+
+array
+
 end
