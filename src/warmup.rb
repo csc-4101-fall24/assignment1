@@ -3,9 +3,9 @@ def fib(n)
   second = 1; 
   array = [first, second]
   if (n == 0) then 
-    return [first]
+    return []
   elsif (n == 1) 
-    return [first, second]
+    return [first]
   end 
   i = 2; 
   while i < n
