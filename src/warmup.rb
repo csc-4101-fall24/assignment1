@@ -32,7 +32,11 @@ def isPalindrome(n)
 end
 
 def nthmax(n, a)
-    raise Exception, "Not Implemented"
+  if a.length <= n then
+    return nil
+  end 
+  n = n.sort
+  return n[a]
 end
 
 def freq(s)
