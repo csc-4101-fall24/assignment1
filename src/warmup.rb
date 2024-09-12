@@ -57,13 +57,28 @@ def freq(s)
     i = i + 1
   end
   return maxChar
-
 end
 
 def zipHash(arr1, arr2)
-  raise Exception, "Not Implemented"
+  if arr1.length != arr2.length then 
+    return nil
+  end 
+  map = Hash.new 
+  i = 0
+  while i < arr1.length
+    map[arr1[i]] = arr2[i]
+    i = i + 1
+  end
+  return map 
 end
 
 def hashToArray(hash)
-    raise Exception, "Not Implemented"
+  arr = Array.new
+  index = 0 
+  for k in hash.keys()
+    arr[index] = [k, hash[k]]
+    index = index + 1
+  end 
+  return arr
+
 end
