@@ -27,24 +27,41 @@ def isPalindrome(n)
     if n[i] != n[n.length - 1] then
       return false
     end 
+    i = i + 1
   end 
   return true 
 end
 
 def nthmax(n, a)
-  if a.length <= n then
+  if a.length < n then
     return nil
   end 
-  n = n.sort
-  return n[a]
+  a.sort!
+  return a[a.length - (n + 1)]
 end
 
 def freq(s)
-    raise Exception, "Not Implemented"
+  if s.length == 0 then
+    return ""
+  end 
+
+  hash = Hash.new
+  i = 1
+  hash[s[i]] = 1
+  maxChar = s[i]
+  while i < s.length
+    hash[s[i]] =  hash[s[i]].nil? ? 1 : hash[s[i]] + 1
+    if hash[maxChar] < hash[s[i]] then
+      maxChar = s[i]
+    end
+    i = i + 1
+  end
+  return maxChar
+
 end
 
 def zipHash(arr1, arr2)
-    raise Exception, "Not Implemented"
+  raise Exception, "Not Implemented"
 end
 
 def hashToArray(hash)
