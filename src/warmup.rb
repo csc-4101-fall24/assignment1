@@ -2,9 +2,9 @@ def fib(n)
   first = 0
   second = 1; 
   array = [first, second]
-  if (n == 0) then 
+  if n == 0 then 
     return []
-  elsif (n == 1) 
+  elsif n == 1 
     return [first]
   end 
   i = 2; 
@@ -18,7 +18,17 @@ def fib(n)
 end
 
 def isPalindrome(n)
-    raise Exception, "Not Implemented"
+  if n < 10 then
+    return true
+  end 
+  n = n.to_s
+  i = 0
+  while i < n.length/2
+    if n[i] != n[n.length - 1] then
+      return false
+    end 
+  end 
+  return true 
 end
 
 def nthmax(n, a)
