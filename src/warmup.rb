@@ -80,5 +80,4 @@ def hashToArray(hash)
     index = index + 1
   end 
   return arr
-
 end
