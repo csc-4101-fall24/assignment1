@@ -5,7 +5,7 @@ class PhoneBook
     end
 
     def add(name, number, is_listed)
-      if @nameHash[name].nil? && number =~ /\d{3}-\d{3}-\d{4}/ && (@phoneHash[number].nil? ? true : @phoneHash[number][1] == false) then 
+      if @nameHash[name].nil? && number =~ /\d{3}-\d{3}-\d{4}/ && (@phoneHash[number].nil? ? true : @phoneHash[number][1] == false) then         
         @nameHash[name] = [number, is_listed]
         @phoneHash[number] = [name, is_listed]
         return true

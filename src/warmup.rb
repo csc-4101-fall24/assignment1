@@ -33,7 +33,7 @@ def isPalindrome(n)
 end
 
 def nthmax(n, a)
-  if a.length < n then
+  if a.length <= n then
     return nil
   end 
   a.sort!
@@ -46,7 +46,7 @@ def freq(s)
   end 
 
   hash = Hash.new
-  i = 1
+  i = 0
   hash[s[i]] = 1
   maxChar = s[i]
   while i < s.length
