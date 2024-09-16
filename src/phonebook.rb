@@ -1,20 +1,23 @@
 class PhoneBook
     def initialize
+        @phonebook = PhoneBook.new
     end
 
     def add(name, number, is_listed)
-        raise Exception, "Not implemented"
+        is_listed == false
+        @phonebook[name] = number
     end
 
     def lookup(name)
-        raise Exception, "Not implemented"
+        @phonebook[name]
     end
 
     def lookupByNum(number)
-        raise Exception, "Not implemented"
+        @phonebook[number]
     end
 
     def namesByAc(areacode)
-        raise Exception, "Not implemented"
+        
     end
+
 end
