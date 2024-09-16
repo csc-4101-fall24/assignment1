@@ -17,7 +17,7 @@ class PhoneBook
     end
 
     def namesByAc(areacode)
-        raise Exception, "Not implemented"
+        
     end
 
 end
