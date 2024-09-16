@@ -31,7 +31,6 @@ def freq(s)
 end
 # freq("a12xxxxxyyyxyxyxy")
 def zipHash(arr1, arr2)
-    raise Exception, "Not Implemented"
 end
 
 def hashToArray(hash)
